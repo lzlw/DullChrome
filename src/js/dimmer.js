@@ -1,3 +1,5 @@
+/* eslint no-unused-vars: 0*/
+
 // Add overlay div to page
 function addOverlay() {
   $( 'body' ).append('"<div id="dimmerOverlay"></div>');
