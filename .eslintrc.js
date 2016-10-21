@@ -1,12 +1,13 @@
 module.exports = {
     "env": {
-        "browser": true
+        "browser": true,
+        "jquery": true
     },
     "extends": "eslint:recommended",
     "rules": {
         "indent": [
             "error",
-            4
+            2
         ],
         "linebreak-style": [
             "error",
