@@ -1,10 +1,11 @@
-// State of overlay.
+// Default state of overlay.
 var overlayEnabled = false;
+var overlayOpacity = 0.5;
 
 $( 'document' ).ready(function() {
   chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
-      console.log('toggle msg recvd', overlayEnabled);
+      // Toggle overlay
       if (request.toggle) {
         if (overlayEnabled) {
           disableDullChrome();
@@ -13,7 +14,38 @@ $( 'document' ).ready(function() {
         }
 
         overlayEnabled = !overlayEnabled;
+      } else if (request.lighten) {
+        if (!overlayEnabled) {
+          enableDullChrome();
+          overlayEnabled = !overlayEnabled;
+        }
+
+        // Lower overlayOpacity
+        overlayOpacity -= 0.1;
+
+        // Check if overlayOpacity is still valid
+        if (overlayOpacity < 0.0) {
+          overlayOpacity = 0;
+        } else {
+          adjustOverlayOpacity(overlayOpacity);
+        }
+      } else if (request.darken) {
+        if (!overlayEnabled) {
+          enableDullChrome();
+          overlayEnabled = !overlayEnabled;
+        }
+
+        // Raise overlayOpacity
+        overlayOpacity += 0.1;
+
+        // Check if overlayOpacity is still valid
+        if (overlayOpacity > 1) {
+          overlayOpacity = 1;
+        } else {
+          adjustOverlayOpacity(overlayOpacity);
+        }
       }
+
       sendResponse({reply: 'done'});
     });
 });
