@@ -44,13 +44,6 @@ function adujustOverlayOpacity(opacity) {
   }
 }
 
-$( 'document' ).ready(function() {
-  addOverlay();
-  styleOverlay();
-  positionOverlay();
-  adujustOverlayOpacity(0.5);
-});
-
 // Reposition overlay on scroll
 window.addEventListener('scroll', function() {
   positionOverlay();

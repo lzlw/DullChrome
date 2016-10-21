@@ -20,6 +20,10 @@ module.exports = {
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "no-undef": 0
+    },
+    "globals": {
+      "chrome": true
     }
 };
