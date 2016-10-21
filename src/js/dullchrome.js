@@ -1,3 +1,5 @@
+/* eslint no-undef: 0 */
+
 // Default state of overlay.
 var overlayEnabled = false;
 var overlayOpacity = 0.5;
