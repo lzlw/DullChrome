@@ -22,7 +22,7 @@ function enableDullChrome() {
   addOverlay();
   styleOverlay();
   positionOverlay();
-  adujustOverlayOpacity(0.5);
+  adjustOverlayOpacity(0.5);
 
   // Reposition overlay on scroll
   window.addEventListener('scroll', positionOverlay);

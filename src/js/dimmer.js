@@ -34,7 +34,7 @@ function resizeOverlay() {
 }
 
 // Change opacity of overlay
-function adujustOverlayOpacity(opacity) {
+function adjustOverlayOpacity(opacity) {
   // Check valid opacity (0.00 - 1.00)
   if (opacity < 0 || opacity > 1) {
     return -1;
