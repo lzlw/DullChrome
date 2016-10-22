@@ -39,11 +39,11 @@ function resizeOverlay() {
 function adjustOverlayOpacity(opacity) {
   // Check valid opacity (0.00 - 1.00)
   if (opacity < 0 || opacity > 1) {
-    return -1;
-  } else {
-    $( 'div#dimmerOverlay' ).fadeTo(0, opacity);
-    return opacity;
+    opacity = Math.round(opacity);
   }
+
+  $( 'div#dimmerOverlay' ).fadeTo(0, opacity);
+  return opacity;
 }
 
 // Reposition overlay on scroll

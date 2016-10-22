@@ -46,10 +46,17 @@ $( 'document' ).ready(function() {
         } else {
           adjustOverlayOpacity(overlayOpacity);
         }
-      } else if (request.opacity) {
-        adjustOverlayOpacity(request.opacity);
+      } else if (request.hasOwnProperty('opacity')) {
+        overlayOpacity = request.opacity;
+
+        if (!overlayEnabled) {
+          enableDullChrome();
+          overlayEnabled = !overlayEnabled;
+        }
+
+        adjustOverlayOpacity(overlayOpacity);
       }
-      
+
       sendResponse({reply: 'done'});
     });
 });

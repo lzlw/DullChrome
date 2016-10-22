@@ -9,7 +9,7 @@ $( 'document' ).ready(function() {
     max: 1,
     orientation: 'horizontal',
     step: 0.05,
-    value: 99,
+    value: 1,
     animate: true,
     change: function(e, slider) {
       slideOverlay(slider.value);
