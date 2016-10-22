@@ -46,8 +46,10 @@ $( 'document' ).ready(function() {
         } else {
           adjustOverlayOpacity(overlayOpacity);
         }
+      } else if (request.opacity) {
+        adjustOverlayOpacity(request.opacity);
       }
-
+      
       sendResponse({reply: 'done'});
     });
 });
@@ -63,6 +65,7 @@ function enableDullChrome() {
     overlayOpacity = 0.1;
   }
 
+  // Apply desired overlayOpacity
   adjustOverlayOpacity(overlayOpacity);
 
   // Reposition overlay on scroll
