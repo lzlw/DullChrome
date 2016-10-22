@@ -2,7 +2,7 @@
 
 // Add overlay div to page
 function addOverlay() {
-  $( 'body' ).append('"<div id="dimmerOverlay"></div>');
+  $( 'body' ).append('<div id="dimmerOverlay"></div>');
 }
 
 // Set position when scrolling
