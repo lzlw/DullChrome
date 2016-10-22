@@ -3,16 +3,19 @@
   <head>
     <link rel="stylesheet" href="../css/jquery-ui.min.css">
     <link rel="stylesheet" href="../css/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="../css/settings.css">
   </head>
   <body>
+    <h1>Tab Dimmer</h1>
     <div id="slider"></div>
-
-    <button id="darken" type="button">-</button>
-    <button id="lighten" type="button">+</button>
-    <button id="toggle" type="button">Toggle!</button>
-
+    <div>
+      <span id="darken" class="ui-state-default ui-corner-all ui-icon ui-icon-triangle-1-w"></span>
+      <span id="lighten" class="ui-state-default ui-corner-all ui-icon ui-icon-triangle-1-e"></span>
+    </div>
+    <div>
+      <span><button id="toggle" type="button">Toggle!</button></span>
+    </div>
     <script src="../js/jquery-3.1.1.js"></script>
-
     <script src="../js/jquery-ui.min.js"></script>
     <script src="../js/settings.js"></script>
   </body>
