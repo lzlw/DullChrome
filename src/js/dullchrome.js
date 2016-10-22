@@ -2,7 +2,7 @@
 
 // Default state of overlay.
 var overlayEnabled = false;
-var overlayOpacity = 0.5;
+var overlayOpacity = false;
 
 $( 'document' ).ready(function() {
   chrome.runtime.onMessage.addListener(
@@ -53,10 +53,17 @@ $( 'document' ).ready(function() {
 });
 
 function enableDullChrome() {
+  // Overlay adding/styling
   addOverlay();
   styleOverlay();
   positionOverlay();
-  adjustOverlayOpacity(0.5);
+
+  // Set to default if overlayOpacity has not been previously set
+  if (!overlayOpacity) {
+    overlayOpacity = 0.1;
+  }
+
+  adjustOverlayOpacity(overlayOpacity);
 
   // Reposition overlay on scroll
   window.addEventListener('scroll', positionOverlay);
